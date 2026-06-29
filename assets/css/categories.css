@@ -1,0 +1,137 @@
+.channel-grid{
+  display:block;
+  margin-top:18px;
+}
+
+.channel-group + .channel-group{
+  margin-top:30px;
+  padding-top:26px;
+  border-top:1px solid rgba(255,255,255,.09);
+}
+
+.channel-group-head{
+  display:flex;
+  align-items:flex-end;
+  justify-content:space-between;
+  gap:16px;
+  margin-bottom:14px;
+}
+
+.channel-group-copy h3{
+  margin:0;
+  color:#f6fbff;
+  font-size:clamp(20px,3vw,28px);
+  letter-spacing:-.025em;
+}
+
+.channel-group-copy p{
+  margin:6px 0 0;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.55;
+}
+
+.channel-group-count{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:32px;
+  padding:0 11px;
+  border:1px solid rgba(24,199,221,.24);
+  border-radius:999px;
+  color:#c9f9ff;
+  background:rgba(24,199,221,.075);
+  font-size:10px;
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.channel-group-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+  gap:14px;
+}
+
+.stream-badge{
+  position:absolute;
+  top:11px;
+  right:11px;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  min-height:24px;
+  padding:0 8px;
+  border-radius:999px;
+  font-size:8px;
+  font-weight:950;
+  letter-spacing:.05em;
+}
+
+.stream-badge.hls{
+  color:#07130d;
+  background:linear-gradient(90deg,var(--brand),var(--brand-2));
+}
+
+.stream-badge.dash{
+  color:#fff7d6;
+  border:1px solid rgba(250,204,21,.30);
+  background:rgba(250,204,21,.12);
+}
+
+.stream-badge.notice,
+.stream-badge.external{
+  color:#e9ddff;
+  border:1px solid rgba(124,58,237,.34);
+  background:rgba(124,58,237,.14);
+}
+
+.channel-type{
+  margin-top:5px;
+  color:#7f93ac;
+  font-size:10px;
+  font-weight:700;
+}
+
+.channel-card.is-dash{
+  border-color:rgba(250,204,21,.15);
+}
+
+.channel-card.is-notice{
+  border-color:rgba(124,58,237,.18);
+}
+
+.channel-card.is-dash:hover{
+  border-color:rgba(250,204,21,.42);
+  background:linear-gradient(180deg,rgba(250,204,21,.07),rgba(255,255,255,.04));
+}
+
+.channel-card.is-notice:hover{
+  border-color:rgba(124,58,237,.48);
+  background:linear-gradient(180deg,rgba(124,58,237,.10),rgba(255,255,255,.04));
+}
+
+@media(max-width:680px){
+  .channel-group + .channel-group{
+    margin-top:24px;
+    padding-top:22px;
+  }
+
+  .channel-group-head{
+    align-items:flex-start;
+  }
+
+  .channel-group-copy p{
+    font-size:11px;
+  }
+
+  .channel-group-grid{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:10px;
+  }
+
+  .stream-badge{
+    top:8px;
+    right:8px;
+  }
+}
