@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BK-16 IPTV Live streaming hub">
+  <meta name="theme-color" content="#050816">
+  <title>IPTV by BK-16</title>
+  <link rel="stylesheet" href="assets/css/app.css">
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img class="brand-logo" alt="BK-16" src="https://dl.dropbox.com/scl/fi/nx2b6zyo5cp4hwgtit12b/22-11-66-01-33-23.png?rlkey=khnfawin5mmaxg1vxq5l7nro3&dl=0">
+        <div class="brand-copy">
+          <div class="eyebrow"><span class="pulse"></span> Live Streaming Hub</div>
+          <div class="brand-title">IPTV by BK-16</div>
+        </div>
+      </div>
+      <div class="channel-pill">📺 ช่องทีวี</div>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="hero">
+      <div class="player-card">
+        <div class="player-frame">
+          <video id="v" controls playsinline></video>
+          <div id="playerPlaceholder" class="player-placeholder">
+            <div class="placeholder-icon">▶</div>
+            <strong>เลือกช่องที่ต้องการรับชม</strong>
+            <span>คลิกการ์ดช่องด้านล่างเพื่อเริ่มเล่น</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="side-card">
+        <div class="side-content">
+          <p class="section-label">Now Playing</p>
+          <img id="featuredLogo" class="featured-logo" src="https://dl.dropbox.com/scl/fi/nx2b6zyo5cp4hwgtit12b/22-11-66-01-33-23.png?rlkey=khnfawin5mmaxg1vxq5l7nro3&dl=0" alt="BK-16">
+          <h1 id="featuredName" class="featured-title">IPTV by BK-16</h1>
+          <p id="status">กรุณาเลือกช่องด้านล่าง</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="channels-section">
+      <div class="section-heading">
+        <div>
+          <p class="section-kicker">LIVE CHANNELS</p>
+          <h2>ช่องทีวี</h2>
+        </div>
+        <span id="channelCount" class="count-pill">0 ช่อง</span>
+      </div>
+
+      <section id="grid-sports" class="channel-grid"></section>
+
+      <p class="hint">
+        คลิกโลโก้ช่องเพื่อรับชมทันที • อัปเดตล่าสุด: <span id="lastUpdated"></span>
+      </p>
+    </section>
+
+    <footer class="footer">
+      ใช้กับลิงก์สตรีมหรือรับชมเท่านั้น ห้ามเผยแพร่เชิงพาณิชย์ • Design by BK-16
+    </footer>
+  </main>
+
+  <div id="playerModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <div class="modal-head">
+        <img id="modalLogo" src="" alt="">
+        <div class="modal-title">
+          <strong id="modalName">External Player</strong>
+          <span>เลือกวิธีเปิดช่องนี้</span>
+        </div>
+        <button class="close-btn" id="closeModal" type="button" title="ปิด">×</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="modal-note" id="modalNote"></p>
+
+        <div id="nonIosButtons" class="btn-grid">
+          <button class="action-btn primary" id="btnMobilePlayer" type="button">
+            เปิดด้วยแอป Player
+            <small>VLC, Wiseplay, Liftplay หรือแอปที่รองรับ HLS</small>
+          </button>
+          <button class="action-btn warn" id="btnOpenTab" type="button">
+            เปิดแท็บใหม่
+            <small>ใช้เมื่อเบราว์เซอร์หรือแอปในเครื่องรองรับลิงก์</small>
+          </button>
+        </div>
+
+        <div id="iosButtons" hidden>
+          <div class="ios-btn-grid">
+            <button class="ios-app-btn" id="btnVLC" type="button">📺 VLC<small>vlc://</small></button>
+            <button class="ios-app-btn" id="btnLiftplay" type="button">🎬 Liftplay<small>liftplay://</small></button>
+            <button class="ios-app-btn" id="btnInfuse" type="button">🎞 Infuse<small>infuse://</small></button>
+            <button class="ios-app-btn" id="btnNPlayer" type="button">🎵 nPlayer<small>nplayer-http://</small></button>
+          </div>
+          <button class="action-btn warn full" id="btnIOSTab" type="button">เปิดแท็บใหม่</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/channels.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
